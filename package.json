@@ -1,5 +1,5 @@
 {
-  "homepage": "https://PranavGare.github.io/Xogene-Task",
+  "homepage": "https://github.com/PranavGare/Drug-Search-App.git",
   "name": "drug-search-app",
   "version": "0.1.0",
   "private": true,
@@ -46,3 +46,4 @@
     "gh-pages": "^6.2.0"
   }
 }
+

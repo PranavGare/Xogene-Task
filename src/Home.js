@@ -10,11 +10,19 @@ function Home() {
 
   const searchDrugs = async () => {
     try {
-      const response = await axios.get(`https://api.fda.gov/drug/event.json?search=${query}`);
-      setResults(response.data.results);
-      setError(null);
+      const response = await axios.get(`https://rxnav.nlm.nih.gov/REST/drugs.json?name=${query}`);
+      const drugs = response.data.drugGroup?.conceptGroup || [];
+      const filteredResults = drugs.flatMap(group => group.conceptProperties || []);
+      
+      if (filteredResults.length === 0) {
+        setError('No results found.');
+        setResults([]);
+      } else {
+        setResults(filteredResults);
+        setError(null);
+      }
     } catch (err) {
-      setError('No results found for this term.');
+      setError('Error searching for drugs. Please try again later.');
       setResults([]);
     }
   };
@@ -24,27 +32,27 @@ function Home() {
     searchDrugs();
   };
 
-  const goToDetails = (id) => {
-    navigate(`/drugs/${id}`);
+  const goToDetails = (rxcui) => {
+    navigate(`/drugs/${rxcui}`);
   };
 
   return (
-    <div>
-      <h1>Drug Search</h1>
+    <div className="container">
+      <h1>Drug Search Application</h1>
       <form onSubmit={handleSearch}>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search by drug name..."
+          placeholder="Enter drug name"
         />
-        <button type="submit">Search</button>
+        <button type="submit"> Search </button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <ul>
         {results.map((drug) => (
-          <li key={drug.id} onClick={() => goToDetails(drug.id)}>
-            {drug.patient.drug[0].medicinalproduct}
+          <li key={drug.rxcui} onClick={() => goToDetails(drug.rxcui)}>
+            {drug.name}
           </li>
         ))}
       </ul>
