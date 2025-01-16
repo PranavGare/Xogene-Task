@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PranavGare/Drug-Search-App.git/static/css/main.cb521342.css",
-    "main.js": "/PranavGare/Drug-Search-App.git/static/js/main.648dab6f.js",
-    "static/js/453.eea9d032.chunk.js": "/PranavGare/Drug-Search-App.git/static/js/453.eea9d032.chunk.js",
-    "index.html": "/PranavGare/Drug-Search-App.git/index.html",
-    "main.cb521342.css.map": "/PranavGare/Drug-Search-App.git/static/css/main.cb521342.css.map",
-    "main.648dab6f.js.map": "/PranavGare/Drug-Search-App.git/static/js/main.648dab6f.js.map",
-    "453.eea9d032.chunk.js.map": "/PranavGare/Drug-Search-App.git/static/js/453.eea9d032.chunk.js.map"
+    "main.css": "/Drug-Search-App/static/css/main.cb521342.css",
+    "main.js": "/Drug-Search-App/static/js/main.60164c13.js",
+    "static/js/453.eea9d032.chunk.js": "/Drug-Search-App/static/js/453.eea9d032.chunk.js",
+    "index.html": "/Drug-Search-App/index.html",
+    "main.cb521342.css.map": "/Drug-Search-App/static/css/main.cb521342.css.map",
+    "main.60164c13.js.map": "/Drug-Search-App/static/js/main.60164c13.js.map",
+    "453.eea9d032.chunk.js.map": "/Drug-Search-App/static/js/453.eea9d032.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb521342.css",
-    "static/js/main.648dab6f.js"
+    "static/js/main.60164c13.js"
   ]
 }
